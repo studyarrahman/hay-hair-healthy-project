@@ -71,7 +71,7 @@ jobs:
         uses: "google-github-actions/auth@v2"
         with:
           credentials_json: "${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}"
-          service_account_key: "${{ secrets.MY_SERVICEACCOUNTKEY }}"
+          # service_account_key: "${{ secrets.MY_SERVICEACCOUNTKEY }}"
           
       # - name: Set environment variables
       #   run: echo "SERVICEACCOUNTKEY_JSON=${{ secrets.SERVICEACCOUNTKEY_JSON }}" >> $GITHUB_ENV
