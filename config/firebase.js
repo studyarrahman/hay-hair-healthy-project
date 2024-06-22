@@ -7,7 +7,7 @@ const secretManagerClient = new SecretManagerServiceClient();
 
 async function getSecret(secretName) {
   const [version] = await secretManagerClient.accessSecretVersion({
-    name: `projects/hay-hair-beauty/secrets/${secretName}/versions/latest`,
+    name: `projects/${process.env.GCLOUD_PROJECT_ID}/secrets/${secretName}/versions/latest`,
   });
 
   const payload = version.payload.data.toString('utf8');
@@ -21,19 +21,19 @@ async function initializeFirebase() {
 
       admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
-        databaseURL: "https://hay-hair-beauty.firebaseio.com",
+        databaseURL: "https://hay-hair-healthy-project.firebaseio.com",
       });
 
       const db = admin.firestore();
 
       const firebaseConfig = {
-        apiKey: "AIzaSyCXr2cwdIn-l2AKnVcz5eAGGhxQc3OGpeM",
-        authDomain: "hay-hair-beauty.firebaseapp.com",
-        projectId: "hay-hair-beauty",
-        storageBucket: "hay-hair-beauty.appspot.com",
-        messagingSenderId: "126780028253",
-        appId: "1:126780028253:web:d0386b51b13f49443124b4",
-        measurementId: "G-5QJHMN455P",
+        apiKey: "AIzaSyDXNbpO0CWZrBFp6RBYeoXWFSB_zAhQydA",
+        authDomain: "hay-hair-healthy-project.firebaseapp.com",
+        projectId: "hay-hair-healthy-project",
+        storageBucket: "hay-hair-healthy-project.appspot.com",
+        messagingSenderId: "626086545012",
+        appId: "1:626086545012:web:b83f92eaf7bc770f853321",
+        measurementId: "G-N17CHP1DSW"
       };
 
       // Initialize Firebase
