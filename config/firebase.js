@@ -18,23 +18,14 @@ async function initializeFirebase() {
   if (!getApps().length) {
     try {
       const serviceAccount = await getSecret('my-serviceaccountkey');
+      const firebaseConfig = await getSecret('my-firebase-config');
 
       admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
-        databaseURL: "https://hay-hair-healthy-project.firebaseio.com",
+        databaseURL: firebaseConfig.databaseURL,
       });
 
       const db = admin.firestore();
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyDXNbpO0CWZrBFp6RBYeoXWFSB_zAhQydA",
-        authDomain: "hay-hair-healthy-project.firebaseapp.com",
-        projectId: "hay-hair-healthy-project",
-        storageBucket: "hay-hair-healthy-project.appspot.com",
-        messagingSenderId: "626086545012",
-        appId: "1:626086545012:web:b83f92eaf7bc770f853321",
-        measurementId: "G-N17CHP1DSW"
-      };
 
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
