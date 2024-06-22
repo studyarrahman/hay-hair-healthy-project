@@ -13,7 +13,7 @@ To install and run the Hay Healthy backend service, you'll need the following:
 
 ## Steps
 1. Clone the Repository: <br/>
-   `git clone https://github.com/Hay-Hair-Beauty/hay-backend-new.git`
+   `git clone https://github.com/studyarrahman/hay-hair-healthy-project.git`
 2. Navigate to the Backend Folder: <br/>
    `cd hay-backend-new`
 3. Rename the Example Environment File: <br/>
